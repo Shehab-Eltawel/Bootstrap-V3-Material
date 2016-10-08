@@ -8583,6 +8583,12 @@ select.selectpicker {
     color: #fff;
     display: block; }
 
+.primary {
+  color: #3F51B5; }
+
+.accent {
+  color: #ff4081; }
+
 #logo h1 {
   line-height: 60px;
   margin: 0; }
