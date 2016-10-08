@@ -98,11 +98,16 @@ $('.bootstrap-select').on('change.bs.select', function (e) {
 });
 
 /* Datepicker*/
-
 $('.date').bootstrapMaterialDatePicker({
     weekStart: 0,
     time: false
 });
+
+/* Tooltip */
+$('[data-toggle="tooltip"]').tooltip({
+    container: 'body'
+});
+
 
 /*  NavTabs */
 var navTab = $('.nav-tabs > li');
@@ -146,21 +151,7 @@ $('.panel-group').on('show.bs.collapse', function(a) {
   });
 
 
-/* Datepicker*/
 
-$('.date').bootstrapMaterialDatePicker({
-    weekStart: 0,
-    time: false
-});
-
-$('[data-toggle="tooltip"]').tooltip({
-    container: 'body'
-});
-
-$('select').selectpicker({
-    iconBase: 'icon',
-    tickIcon: 'check_box'
-});
 
 // prevent buttons to behave like buttons
 $(document).ready(function (){
@@ -219,4 +210,4 @@ $(document).ready(function(){
   }
 
 })();
-})
+});
