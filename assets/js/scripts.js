@@ -102,10 +102,7 @@ $('.date').bootstrapMaterialDatePicker({
     time: false
 });
 
-/* Tooltip */
-$('[data-toggle="tooltip"]').tooltip({
-    container: 'body'
-});
+
 
 
 /*  NavTabs */
