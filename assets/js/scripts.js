@@ -97,11 +97,16 @@ $('.bootstrap-select').on('change.bs.select', function (e) {
   $(this).find('.btn').addClass('active');
 });
 
-/* Datepicker*/
+/* Datepicker */
 
 $('.date').bootstrapMaterialDatePicker({
     weekStart: 0,
     time: false
+});
+
+/* Tooltip */
+$('[data-toggle="tooltip"]').tooltip({
+    container: 'body'
 });
 
 /*  NavTabs */
