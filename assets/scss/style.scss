@@ -4,7 +4,8 @@
 	& a {color: #fff; display: block;
 	}
 }
-
+.primary {color: $brand-primary}
+.accent {color: $brand-accent;}
 #logo h1 {line-height: 60px; margin: 0;}
 
 #source-button {
