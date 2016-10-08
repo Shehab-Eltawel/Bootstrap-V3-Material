@@ -85,6 +85,7 @@ inputFile.on('change', function(){
   textInput.parent().addClass('active');
 });
 
+
 // Bootstrap select
 $('select').selectpicker({
     iconBase: 'icon',
@@ -102,7 +103,10 @@ $('.date').bootstrapMaterialDatePicker({
     time: false
 });
 
-
+/* Tooltip */
+$('[data-toggle="tooltip"]').tooltip({
+    container: 'body'
+});
 
 
 /*  NavTabs */
@@ -206,4 +210,4 @@ $(document).ready(function(){
   }
 
 })();
-})
+});
