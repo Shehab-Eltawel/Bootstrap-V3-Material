@@ -98,7 +98,6 @@ $('.bootstrap-select').on('change.bs.select', function (e) {
 });
 
 /* Datepicker */
-
 $('.date').bootstrapMaterialDatePicker({
     weekStart: 0,
     time: false
