@@ -1,0 +1,202 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: $btn-default-border;
+  white-space: nowrap;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  @include button-size($no-padding,$padding-large-horizontal, $font-size-base, $btn-default-height, $btn-border-radius-base);
+  @include user-select(none);
+
+  &:hover,
+  &:focus,
+  &.focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] &,
+  &.disabled:focus,
+  &[disabled]:focus {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+
+  // [converter] extracted a& to a.btn
+}
+
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  &:focus:not(:active) {
+    background-color: rgba(0,0,0,.12);
+  }
+  &:active,
+  &.active
+   {
+    background: rgba(158,158,158,.4);
+  }
+  & .caret {color: $md-text-sec;}
+}
+.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-default-border);
+}
+
+.btn-accent {
+  @include button-variant($btn-accent-color, $btn-accent-bg, $btn-default-border);
+}
+// Success appears as green
+.btn-success {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-default-border);
+}
+// Info appears as blue-green
+.btn-info {
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-default-border);
+}
+// Warning appears as orange
+.btn-warning {
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-default-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-default-border);
+}
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.btn-icon
+ {
+  background-color: transparent;
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &:hover {
+    background: rgba(158,158,158,.2);
+  }
+  &:focus:not(:active) {
+    background-color: rgba(0,0,0,.12);
+  }
+  &:active,
+  &.active
+   {
+    background: rgba(158,158,158,.4);
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-icon {
+  border-radius: $border-radius-circle;
+  width: 32px;
+  height: 32px;
+  padding: $no-padding;
+  text-align: center;
+  & .icon {
+    @include center-absolute();
+    line-height: 32px;
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($no-padding, $padding-large-horizontal, $font-size-medium, $btn-large-height, $btn-border-radius-base);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($no-padding, $padding-large-horizontal, $font-size-small, $btn-small-height, $btn-border-radius-base);
+}
+.btn-xs {
+  @include button-size($no-padding, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-base);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.fab {
+  border-radius: $border-radius-circle;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  position: relative;
+  & .icon {
+    @include center-absolute();
+    line-height: 56px;
+  }
+  &.mini {
+    width: 40px;
+    height: 40px;
+    & .icon {
+      line-height: 40px;
+    }
+  }
+}

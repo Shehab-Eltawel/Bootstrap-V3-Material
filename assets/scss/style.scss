@@ -1,0 +1,39 @@
+@import "bootstrap";
+
+.header {background-color: $brand-primary;
+	& a {color: #fff; display: block;
+	}
+}
+
+#logo h1 {line-height: 60px; margin: 0;}
+
+#source-button {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+}
+
+.bs-component {
+	margin-bottom: 15px;
+	padding-top: 30px;
+	position: relative;
+& > form { & .btn-link {margin-right: 15px; margin-top: 15px;}}
+& .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    display: block;
+		overflow: visible;
+}
+	& .modal-dialog {
+    width: 90%;
+		margin-left: 0;
+	}
+}
+
+.bs-component{
+
+& > button.btn, & > .btn-group  {margin-right: 15px; margin-bottom: 15px;}}
