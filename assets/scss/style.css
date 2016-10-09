@@ -8591,7 +8591,8 @@ select.selectpicker {
 
 #logo h1 {
   line-height: 60px;
-  margin: 0; }
+  margin: 0;
+  font-weight: 300; }
 
 #source-button {
   position: absolute;
